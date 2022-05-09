@@ -1,16 +1,10 @@
 <mat-toolbar color="primary">
-  <a mat-button aria-label="page icon" routerLink="">
+  <a mat-button aria-label="page icon" routerLink="/home">
     <mat-icon>shopping_basket</mat-icon>
     <span>Angular Ecommerce</span>
   </a>
   <span class="spacer"></span>
 
-  <button
-    mat-icon-button
-    class="menu-icon"
-    aria-label="menu icon"
-    fxHide.gt-sm="true"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
+  <a mat-button routerLink="/signin">Sign in</a>
+  <a mat-button routerLink="/admin">Admin</a>
 </mat-toolbar>

@@ -50,14 +50,16 @@ export class SignInComponent implements OnInit {
   onSignIn() {
     const email = this.signInForm.value.email;
     const password = this.signInForm.value.password;
-    this.authService.login(email, password).subscribe((res) => {
-      console.log(res);
-      if (res) {
+    this.authService.login(email, password).subscribe((isLoggedIn) => {
+      console.log(isLoggedIn);
+      if (isLoggedIn) {
         this.router.navigate(['/admin']);
       }
-      this._snackBar.open('Authentication Failed! try again.', 'Okay', {
-        duration: 1000,
-      });
+      if (!isLoggedIn) {
+        this._snackBar.open('Authentication Failed! try again.', 'Okay', {
+          duration: 1000,
+        });
+      }
     });
   }
 }

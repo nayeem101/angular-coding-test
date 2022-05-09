@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+  <div class="container">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-title>
+        <button mat-flat-button color="primary" (click)="addProduct()">
+          Add Product
+        </button>
+      </mat-card-title>
+
+      <div fxLayout="column" fxLayoutGap="8px" style="padding: 1rem 0">
+        <div *ngIf="products.length === 0">No product available! Add new</div>
+
+        <ng-container *ngIf="products">
+          <div fxFlexFill *ngFor="let product of products">
+            <app-product-list-item [product]="product"></app-product-list-item>
+          </div>
+        </ng-container>
+      </div>
+    </mat-card>
+  </div>
+</div>

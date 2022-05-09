@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     if (this.authService.isAdminUser()) {
       return true;
     }
-    this.router.navigate(['sign-in'], { queryParams: { retUrl: route.url } });
+    this.router.navigate(['signin'], { queryParams: { retUrl: route.url } });
     return false;
   }
 }

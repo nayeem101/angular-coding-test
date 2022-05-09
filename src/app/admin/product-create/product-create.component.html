@@ -1,0 +1,63 @@
+<h1 mat-dialog-title>{{ title }} Product</h1>
+<form [formGroup]="productForm" autocomplete="off" (submit)="onSave()">
+  <mat-form-field appearance="outline">
+    <mat-label>Product Name</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      type="text"
+      placeholder="Product Name"
+    />
+    <mat-error *ngIf="productForm.get('name')?.invalid">
+      Product Name is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Image URL (Product image)</mat-label>
+    <input
+      matInput
+      formControlName="img_url"
+      type="text"
+      placeholder="assets/abc.png"
+    />
+    <mat-error *ngIf="productForm.get('img_url')?.invalid">
+      Product image url is required
+    </mat-error>
+  </mat-form-field>
+
+  <div fxLayout>
+    <mat-form-field appearance="outline">
+      <mat-label>Product Price</mat-label>
+      <input
+        matInput
+        formControlName="price"
+        type="number"
+        placeholder="Product Price"
+      />
+      <mat-error *ngIf="productForm.get('price')?.invalid">
+        Product price is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Brand Name</mat-label>
+      <input
+        matInput
+        formControlName="brand"
+        type="text"
+        placeholder="Brand Name"
+      />
+      <mat-error *ngIf="productForm.get('brand')?.invalid">
+        Product brand name is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Description (Optional)</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" [disabled]="productForm.invalid">
+    {{ editing ? "Update" : "Save" }}
+  </button>
+</form>

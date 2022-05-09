@@ -1,0 +1,33 @@
+<div
+  class="products"
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+  fxLayoutGap="22px"
+>
+  <ng-container *ngIf="products.length !== 0">
+    <div *ngFor="let product of products" class="product-card">
+      <mat-card class="mat-elevation-z4">
+        <img
+          mat-card-image
+          class="card-image"
+          [src]="product.img_url"
+          alt="Photo of a Shiba Inu"
+        />
+
+        <h3 class="product-title">{{ product.name }}</h3>
+        <h4 class="product-price">{{ product.price }}</h4>
+
+        <mat-card-content>
+          <p>{{ product.description?.substring(0, 20) }}...</p>
+        </mat-card-content>
+
+        <a
+          mat-flat-button
+          color="primary"
+          routerLink="/products/{{ product.id }}"
+          >Details</a
+        >
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

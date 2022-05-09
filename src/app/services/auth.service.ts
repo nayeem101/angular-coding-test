@@ -15,7 +15,7 @@ export class AuthService {
   getUserDetails(email: string) {
     return {
       email: 'admin@gmail.com',
-      password: '@admin1234',
+      password: '@dmin1234',
     };
   }
 

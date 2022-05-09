@@ -1,0 +1,16 @@
+<div>
+  <div mat-dialog-title class="dialog-title">
+    <h2>Want to delete this product?</h2>
+    <button mat-icon-button (click)="closeDialog()">
+      <mat-icon class="mat-18">close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-actions class="dialog-actions">
+    <button mat-flat-button color="warn" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true">
+      Ok
+    </button>
+  </div>
+</div>
