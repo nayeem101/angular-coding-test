@@ -16,8 +16,9 @@ import { ProductListItemComponent } from './components/product-list-item/product
 
 import { ProductCreateComponent } from './admin/product-create/product-create.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
-import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,9 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     SncakbarComponent,
     ProductListItemComponent,
-
     ProductCreateComponent,
     DeleteDialogComponent,
+    ProductDetailsComponent,
     ProductComponent,
   ],
   imports: [

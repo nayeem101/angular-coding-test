@@ -13,6 +13,7 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 })
 export class ProductListItemComponent implements OnInit {
   @Input() product!: Product;
+
   constructor(
     private _productService: PrdouctService,
     private _snackBar: MatSnackBar,

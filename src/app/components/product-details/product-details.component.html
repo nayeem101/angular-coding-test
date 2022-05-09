@@ -1,0 +1,9 @@
+<div class="product-details" *ngIf="product">
+  <mat-card class="mat-elevation-z4">
+    <img [src]="product.img_url" [alt]="product.name" />
+    <h1>{{ product.name }}</h1>
+    <h2>Brand: {{ product.brand }}</h2>
+    <h3>Price: {{ product.price | currency: "BDT":"symbol-narrow" }}</h3>
+    <p>Description: {{ product.description }}</p>
+  </mat-card>
+</div>

@@ -5,6 +5,6 @@
   </a>
   <span class="spacer"></span>
 
-  <a mat-button routerLink="/signin">Sign in</a>
+  <a mat-button routerLink="/signin" *ngIf="!isAdmin">Sign in</a>
   <a mat-button routerLink="/admin">Admin</a>
 </mat-toolbar>

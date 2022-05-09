@@ -25,18 +25,6 @@ export class PrdouctService {
     localStorage.setItem('ngproducts', JSON.stringify(this.products));
   }
 
-  private ProductCreatedSource = new BehaviorSubject<boolean>(false);
-  ProductCreated$ = this.ProductCreatedSource.asObservable();
-  confirmProductCreated(confirmed: boolean) {
-    this.ProductCreatedSource.next(confirmed);
-  }
-
-  private ProductDeletedSource = new BehaviorSubject<boolean>(false);
-  ProductDeleted$ = this.ProductDeletedSource.asObservable();
-  confirmProductDeleted(confirmed: boolean) {
-    this.ProductDeletedSource.next(confirmed);
-  }
-
   getAllProducts(): Observable<Product[]> {
     return of(this.products);
   }

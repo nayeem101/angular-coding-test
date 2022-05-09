@@ -1,1 +1,38 @@
-<p>product works!</p>
+<mat-card class="mat-elevation-z4">
+  <img
+    mat-card-image
+    class="card-image"
+    [src]="product.img_url"
+    alt="Photo of a Shiba Inu"
+  />
+
+  <h3 class="product-title">{{ product.name }}</h3>
+  <h4 class="product-price">
+    {{ product.price * amount | currency: "BDT":"symbol-narrow" }}
+  </h4>
+
+  <div>
+    <button mat-icon-button (click)="decreaseAmount()">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <input
+      class="input-amount"
+      type="number"
+      [value]="amount"
+      #input
+      readonly
+      min="0"
+    />
+    <button mat-icon-button (click)="increaseAmount()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <mat-card-content>
+    <p>{{ product.description?.substring(0, 20) }}...</p>
+  </mat-card-content>
+
+  <a mat-flat-button color="primary" routerLink="/products/{{ product.id }}"
+    >Details</a
+  >
+</mat-card>
