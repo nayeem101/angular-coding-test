@@ -1,0 +1,23 @@
+.wrapper {
+  margin: auto;
+  width: 100%;
+}
+
+.sign-card {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.card-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.card-actions button.card-action-btn {
+  width: 50%;
+}
