@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { HomeComponent } from './home/home.component';
 
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthGuard } from './services/auth-guard.guard';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { CheckLoginGuard } from './services/check-login.guard';
 
 const routes: Routes = [
-  { path: 'signin', component: SignInComponent },
-  { path: '', redirectTo: '/signin', pathMatch: 'full' },
+  {
+    path: 'signin',
+    component: SignInComponent,
+    canActivate: [CheckLoginGuard],
+  },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./products/product.module').then((m) => m.ProductModule),
+  },
   {
     path: 'admin',
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
   },
-  { path: 'home', component: HomeComponent },
-  { path: 'products/:id', component: ProductDetailsComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

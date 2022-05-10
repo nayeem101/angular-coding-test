@@ -18,8 +18,8 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | boolean | UrlTree {
-    if (this.authService.isAdminUser()) {
+  ): boolean {
+    if (this.authService.isAdminUser() || this.authService.getLoginDetails()) {
       return true;
     }
     this.router.navigate(['signin'], { queryParams: { retUrl: route.url } });

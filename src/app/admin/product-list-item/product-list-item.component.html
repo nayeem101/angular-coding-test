@@ -3,17 +3,19 @@
   fxLayout
   fxLayoutAlign="space-between center"
   fxLayoutGap="8px"
+  fxLayout.lt-sm="column"
+  fxLayoutGap.lt-md="4px"
 >
-  <div fxFlex="1 1 15" class="product-card-img">
+  <div fxFlex.gt-sm="1 1 15" class="product-card-img">
     <img class="product-img" [src]="product.img_url" [alt]="product.name" />
   </div>
 
-  <h3 fxFlex="1 1 55" class="product-name">{{ product.name }}</h3>
-  <h3 fxFlex="1 1 15" class="product-name">
+  <h3 fxFlex.gt-sm="1 1 55" class="product-name">{{ product.name }}</h3>
+  <h3 fxFlex.gt-sm="1 1 15" class="product-name">
     {{ product.price | currency: "BDT":"symbol-narrow" }}
   </h3>
 
-  <div class="actions" fxFlex="1 1 15" fxLayoutAlign="end center">
+  <div class="actions" fxFlex.gt-sm="1 1 15" fxLayoutAlign="end center">
     <button mat-icon-button color="primary" (click)="openDialog()">
       <mat-icon>edit</mat-icon>
     </button>

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from 'src/app/interfaces/product.interface';
-import { PrdouctService } from 'src/app/services/prdouct.service';
+import { PrdouctService } from 'src/app/products/prdouct.service';
 
 @Component({
   selector: 'app-product-create',

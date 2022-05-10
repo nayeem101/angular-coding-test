@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
-  <a mat-button aria-label="page icon" routerLink="/home">
+  <a mat-button aria-label="page icon" routerLink="/products">
     <mat-icon>shopping_basket</mat-icon>
     <span>Angular Ecommerce</span>
   </a>
   <span class="spacer"></span>
 
   <a mat-button routerLink="/signin" *ngIf="!isAdmin">Sign in</a>
-  <a mat-button routerLink="/admin">Admin</a>
+  <button mat-button *ngIf="isAdmin" (click)="logOut()">Log Out</button>
+  <a mat-button routerLink="/admin" *ngIf="isAdmin">Admin</a>
 </mat-toolbar>

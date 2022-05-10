@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'src/app/interfaces/product.interface';
-import { PrdouctService } from 'src/app/services/prdouct.service';
+import { PrdouctService } from 'src/app/products/prdouct.service';
 import { ProductCreateComponent } from '../product-create/product-create.component';
 
 @Component({

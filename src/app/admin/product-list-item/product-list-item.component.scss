@@ -5,14 +5,22 @@
 }
 
 .product-card-img {
-  height: 80px;
-  width: 80px;
+  height: 82px;
+  width: 82px;
 }
 
 .product-img {
-  width: 80px;
+  width: 100%;
   height: auto;
 }
+
 .product-name {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .product-card-img {
+    width: 200px;
+    height: 200px;
+  }
 }

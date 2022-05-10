@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductCreateComponent } from 'src/app/admin/product-create/product-create.component';
 import { Product } from 'src/app/interfaces/product.interface';
-import { PrdouctService } from 'src/app/services/prdouct.service';
-import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { PrdouctService } from 'src/app/products/prdouct.service';
+import { DeleteDialogComponent } from '../../components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-product-list-item',
